@@ -1,0 +1,13 @@
+.details {
+  padding: 50px;
+}
+
+.details h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.details p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}

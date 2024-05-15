@@ -1,0 +1,13 @@
+.cart {
+  padding: 50px;
+  text-align: center;
+}
+
+.cart h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.cart p {
+  font-size: 1.2em;
+}
