@@ -8,6 +8,7 @@ const Navbar = () => {
       <Link to="/">Home</Link>
       <Link to="/products">Products</Link>
       <Link to="/cart">Cart</Link>
+      <input type="text" className={styles.searchBar} placeholder="Search products..." />
     </div>
   );
 };

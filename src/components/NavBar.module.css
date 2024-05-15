@@ -5,6 +5,8 @@
   justify-content: space-between;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar a {
@@ -14,8 +16,23 @@
   font-weight: bold;
 }
 
+
+.searchBar {
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 @media (max-width: 600px) {
   .navbar {
-    justify-content: center;
+    flex-direction: column;
+  }
+
+  .searchBar {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
   }
 }
