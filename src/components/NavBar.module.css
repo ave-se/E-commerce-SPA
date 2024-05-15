@@ -4,11 +4,18 @@
   display: flex;
   justify-content: space-between;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  flex-wrap: wrap;
 }
 
 .navbar a {
-  margin-right: 20px;
+  margin: 10px 20px;
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+  }
 }

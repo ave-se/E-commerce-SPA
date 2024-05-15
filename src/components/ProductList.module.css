@@ -5,6 +5,7 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
+  width: calc(100% - 40px); /* Full width minus margins */
 }
 
 .product:hover {
@@ -15,4 +16,17 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+
+/* Responsive styles */
+@media (min-width: 600px) {
+  .product {
+    width: calc(50% - 40px); /* Half width minus margins */
+  }
+}
+
+@media (min-width: 900px) {
+  .product {
+    width: calc(33.33% - 40px); /* Third width minus margins */
+  }
 }
