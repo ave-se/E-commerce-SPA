@@ -1,0 +1,36 @@
+/* FeaturedProducts.module.css */
+.featured {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .products {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product {
+    width: 18%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .productTitle {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .price {
+    color: #888;
+  }
