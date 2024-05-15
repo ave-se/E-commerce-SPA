@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import styles from './ProductDetails.module.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -15,13 +16,14 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  if (!product) return null;
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div>
+    <div className={styles.details}>
       <h1>{product.title}</h1>
       <p>{product.description}</p>
-      <p>${product.price}</p>
     </div>
   );
 };

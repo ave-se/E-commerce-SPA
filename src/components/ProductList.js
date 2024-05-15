@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import styles from './ProductList.module.css';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -17,7 +18,7 @@ const ProductList = () => {
   return (
     <div>
       {products.map((product) => (
-        <div key={product.id}>
+        <div key={product.id} className={styles.product}>
           <Link to={`/products/${product.id}`}>{product.title}</Link>
         </div>
       ))}
