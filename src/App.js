@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import CookieConsentModal from './components/CookieConsentModal';
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(true);
+
+  const handleSave = () => {
+    // Save the user's preferences
+    setModalOpen(false);
+  };
+
+  const handleAcceptAll = () => {
+    // Accept all cookies
+    setModalOpen(false);
+  };
+
+  const handleRejectAll = () => {
+    // Reject all cookies
+    setModalOpen(false);
+  };
+
   return (
     <Router>
       <NavBar />
@@ -16,6 +34,13 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      {isModalOpen && (
+        <CookieConsentModal
+          onSave={handleSave}
+          onAcceptAll={handleAcceptAll}
+          onRejectAll={handleRejectAll}
+        />
+      )}
     </Router>
   );
 }
