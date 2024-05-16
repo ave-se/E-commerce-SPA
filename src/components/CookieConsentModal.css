@@ -214,3 +214,8 @@ input:checked + .slider:before {
     margin-bottom: 10px;
   }
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
