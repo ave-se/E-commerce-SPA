@@ -18,3 +18,26 @@
     height: 100%;
     object-fit: cover;
   }
+
+  /* SlickCarousel.module.css */
+
+.slider .slick-dots {
+  bottom: -30px; /* Adjust the position of the dots */
+}
+
+.slider .slick-dots li {
+  margin: 0 5px; /* Add some space between the dots */
+}
+
+.slider .slick-dots li button {
+  font-size: 0; /* Hide the default number */
+  line-height: 0;
+  width: 10px; /* Adjust the size of the dots */
+  height: 10px;
+  background: #ccc; /* Change the color of the dots */
+  border-radius: 50%; /* Make the dots circular */
+}
+
+.slider .slick-dots li.slick-active button {
+  background: #333; /* Change the color of the active dot */
+}
