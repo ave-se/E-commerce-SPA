@@ -14,7 +14,7 @@
 }
 .close-button {
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 40px;
   background: none;
   border: none;
@@ -83,6 +83,7 @@
 
 .cookie-option {
   display: flex;
+  justify-content: center; /* Add this line */
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
@@ -204,9 +205,17 @@ input:checked + .slider:before {
     flex-direction: column;
   }
 
-  .cookie-option {
+  .cookie-options {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .cookie-option h4 {

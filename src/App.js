@@ -10,6 +10,10 @@ import CookieConsentModal from './components/CookieConsentModal';
 function App() {
   const [isModalOpen, setModalOpen] = useState(true);
 
+  const handleClose = () => {
+    setModalOpen(false);
+  };
+
   const handleSave = () => {
     // Save the user's preferences
     setModalOpen(false);
@@ -36,6 +40,7 @@ function App() {
       </Routes>
       {isModalOpen && (
         <CookieConsentModal
+          onClose={handleClose}
           onSave={handleSave}
           onAcceptAll={handleAcceptAll}
           onRejectAll={handleRejectAll}

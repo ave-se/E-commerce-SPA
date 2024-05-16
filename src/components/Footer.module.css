@@ -1,0 +1,11 @@
+/* Footer.module.css */
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .text {
+    margin: 0;
+  }

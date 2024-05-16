@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SlickCarousel from './SlickCarousel';
-import Header from './Header';
+
 import FeaturedProducts from './FeaturedProducts';
 import PromotionalBanners from './PromotionalBanners';
 import ProductGrid from './ProductGrid';
@@ -26,7 +26,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.home}>
-      <Header />
+      
       <h1>Welcome to our store</h1>
       <p>Feel free to browse our products.</p>
       <SlickCarousel images={images} />
