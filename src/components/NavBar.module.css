@@ -5,8 +5,6 @@
   justify-content: space-between;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
 }
 
 .navbar a {
@@ -16,23 +14,44 @@
   font-weight: bold;
 }
 
-
-.searchBar {
-  flex-grow: 1;
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
   }
 
+
   .searchBar {
-    margin-left: 0;
-    margin-top: 10px;
     width: 100%;
+    box-sizing: border-box;
+    padding-right: 50px; /* Adjust based on the size of your button */
   }
+}
+
+.searchContainer {
+  top: 10px;
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.searchBar {
+  width: 200px; 
+  box-sizing: border-box;
+  padding-right: 50px; /* Adjust based on the size of your button */
+}
+
+.searchButton {
+  position: absolute;
+  height: 22px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 35px; /* Adjust based on your design */
+  background: #007BFF; /* Typical blue color */
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
 }

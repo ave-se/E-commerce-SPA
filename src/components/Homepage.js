@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SlickCarousel from './SlickCarousel';
-
 import FeaturedProducts from './FeaturedProducts';
 import PromotionalBanners from './PromotionalBanners';
 import ProductGrid from './ProductGrid';
@@ -26,16 +25,16 @@ const HomePage = () => {
 
   return (
     <div className={styles.home}>
-      
       <h1>Welcome to our store</h1>
-      <p>Feel free to browse our products.</p>
-      <SlickCarousel images={images} />
-      <FeaturedProducts />
-      <PromotionalBanners />
-      <ProductGrid />
-      <SocialProof />
-      <NewsletterSignup />
-      <Footer />
+      <p className={styles.paragraph}>Feel free to browse our products.</p>
+<SlickCarousel images={images} />
+      
+<FeaturedProducts className={styles.component} />
+<PromotionalBanners className={styles.component} />
+<ProductGrid className={styles.component} />
+<SocialProof className={styles.component} />
+<NewsletterSignup className={styles.component} />
+<Footer className={styles.component} />
     </div>
   );
 };

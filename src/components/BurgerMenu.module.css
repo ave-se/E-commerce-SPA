@@ -1,14 +1,33 @@
 /* BurgerMenu.module.css */
 .burgerMenu {
-    position: absolute;
-    z-index: 2;
+  display: none;
+  cursor: pointer;
+}
+
+.burgerMenu .menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: #f8f9fa;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.burgerMenu .menu a {
+  margin: 10px 0;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .burgerMenu {
+    display: block;
   }
-  
-  .menu {
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 100px;
+
+  .burgerMenu .menu.open {
     display: flex;
-    flex-direction: column;
   }
+}

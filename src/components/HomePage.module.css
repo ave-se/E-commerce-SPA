@@ -10,6 +10,15 @@
 
 .home p {
   font-size: 1.2em;
+
+}
+
+.paragraph {
+  margin-bottom: 30px; /* Adjust this value to your desired spacing */
+}
+
+.component {
+  margin-bottom: 40px; /* Adjust this value to your desired spacing */
 }
 
 @media (max-width: 600px) {
