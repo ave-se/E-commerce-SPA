@@ -1,0 +1,15 @@
+/* DiscountedProducts.module.css */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.productCard {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.productImage {
+  width: 100%;
+}
