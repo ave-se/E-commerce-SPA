@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import PromoBar from './components/PromoBar';
+import DiscountedProducts from './components/DiscountedProducts';
 import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
@@ -39,7 +40,7 @@ function App() {
         <Route path="/products" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
-      </Routes>
+        <Route path="/discounted-products" element={<DiscountedProducts />} />       </Routes>
       {isModalOpen && (
         <CookieConsentModal
           onClose={handleClose}
