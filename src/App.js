@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import PromoBar from './components/PromoBar';
 import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <Router>
+      <PromoBar />
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
