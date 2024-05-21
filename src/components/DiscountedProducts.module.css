@@ -6,10 +6,27 @@
 }
 
 .productCard {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ccc;
   padding: 1rem;
 }
 
+.productImageContainer {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .productImage {
-  width: 100%;
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.productInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
