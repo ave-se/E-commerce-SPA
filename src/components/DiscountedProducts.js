@@ -1,5 +1,6 @@
 // DiscountedProducts.js
 import React, { useState, useEffect } from 'react';
+import styles from './DiscountedProducts.module.css';
 
 const DiscountedProducts = () => {
   const [products, setProducts] = useState([]);
@@ -23,13 +24,15 @@ const DiscountedProducts = () => {
   return (
     <div>
       <h1>Discounted Products</h1>
-      {products.map(product => (
-        <div key={product.id}>
-          <img src={product.image} alt={product.title} style={{ width: '200px' }} />
-          <h2>{product.title}</h2>
-          <p><s>${product.originalPrice.toFixed(2)}</s> ${product.price.toFixed(2)}</p>
-        </div>
-      ))}
+      <div className={styles.productsGrid}>
+        {products.map(product => (
+          <div key={product.id} className={styles.productCard}>
+            <img src={product.image} alt={product.title} className={styles.productImage} />
+            <h2>{product.title}</h2>
+            <p><s>${product.originalPrice.toFixed(2)}</s> ${product.price.toFixed(2)}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
