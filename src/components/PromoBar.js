@@ -10,7 +10,7 @@ const PromoBar = () => {
   }
 
   return (
-    <Link to="/sales" style={{ textDecoration: 'none', color: 'white' }}>
+    <Link to="/discounted-products" style={{ textDecoration: 'none', color: 'white' }}>
       <div style={{ 
         backgroundColor: 'blue', 
         padding: '10px', 
