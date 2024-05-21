@@ -11,11 +11,26 @@ const PromoBar = () => {
 
   return (
     <Link to="/sales" style={{ textDecoration: 'none', color: 'white' }}>
-      <div style={{ backgroundColor: 'blue', padding: '10px', width: '100%', zIndex: 100 }}>
-        <span>Check out our latest deals!</span>
+      <div style={{ 
+        backgroundColor: 'blue', 
+        padding: '10px', 
+        width: '100%', 
+        zIndex: 100, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        position: 'relative' ,
+        boxSizing: 'border-box' 
+      }}>
+        <span>Check out our latest deals, Don't miss a 15% discount on selected products</span>
         <button 
           onClick={(e) => { e.preventDefault(); setIsVisible(false); }} 
-          style={{ float: 'right', border: 'none', background: 'none', cursor: 'pointer' }}
+          style={{ 
+            position: 'absolute', 
+            right: '30px', 
+            border: 'none', 
+            background: 'none', 
+            cursor: 'pointer' 
+          }}
         >
           X
         </button>
