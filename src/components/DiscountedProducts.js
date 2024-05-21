@@ -1,8 +1,10 @@
 // DiscountedProducts.js
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { CartContext } from './CartContext';
 import styles from './DiscountedProducts.module.css';
 
 const DiscountedProducts = () => {
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -27,9 +29,14 @@ const DiscountedProducts = () => {
       <div className={styles.productsGrid}>
         {products.map(product => (
           <div key={product.id} className={styles.productCard}>
-            <img src={product.image} alt={product.title} className={styles.productImage} />
-            <h2>{product.title}</h2>
-            <p><s>${product.originalPrice.toFixed(2)}</s> ${product.price.toFixed(2)}</p>
+            <div className={styles.productImageContainer}>
+              <img src={product.image} alt={product.title} className={styles.productImage} />
+            </div>
+            <div className={styles.productInfo}>
+              <h2>{product.title}</h2>
+              <p><s>${product.originalPrice.toFixed(2)}</s> ${product.price.toFixed(2)}</p>
+              <button onClick={() => addToCart(product)}>Add to Cart</button>
+            </div>
           </div>
         ))}
       </div>

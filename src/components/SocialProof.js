@@ -1,18 +1,16 @@
 // SocialProof.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const API_URL = '/api/testimonials'; // Replace with your API URL
+const testimonials = [
+  { text: 'This is the best website for shopping ever!', author: 'John Doe' },
+  { text: 'I love how fast delivery was', author: 'Jane Doe' },
+  { text: 'Highly recommended, especially for discounts and sales!', author: 'Jim Doe' },
+  // Add more testimonials as needed
+];
 
 const SocialProof = () => {
   const [current, setCurrent] = useState(0);
-  const [testimonials, setTestimonials] = useState([]);
   const [form, setForm] = useState({ text: '', author: '' });
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then(response => response.json())
-      .then(setTestimonials);
-  }, []);
 
   const nextTestimonial = () => {
     setCurrent((current + 1) % testimonials.length);
@@ -28,27 +26,15 @@ const SocialProof = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    })
-      .then(response => response.json())
-      .then(newTestimonial => {
-        setTestimonials([...testimonials, newTestimonial]);
-        setForm({ text: '', author: '' });
-      });
+    testimonials.push(form);
+    setForm({ text: '', author: '' });
   };
 
   return (
     <section>
       <h2>Testimonials</h2>
-      {testimonials[current] && (
-        <>
-          <p>"{testimonials[current].text}"</p>
-          <p>- {testimonials[current].author}</p>
-        </>
-      )}
+      <p>"{testimonials[current].text}"</p>
+      <p>- {testimonials[current].author}</p>
       <button onClick={prevTestimonial}>Previous</button>
       <button onClick={nextTestimonial}>Next</button>
 

@@ -8,6 +8,7 @@ import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
 import CookieConsentModal from './components/CookieConsentModal';
+import { CartProvider } from './components/CartContext'; 
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(true);
@@ -32,6 +33,8 @@ function App() {
   };
 
   return (
+    <CartProvider> {/* Wrap your application in the CartProvider */}
+      <div>
     <Router>
       <PromoBar />
       <NavBar />
@@ -47,9 +50,11 @@ function App() {
           onSave={handleSave}
           onAcceptAll={handleAcceptAll}
           onRejectAll={handleRejectAll}
-        />
-      )}
-    </Router>
+          />
+          )}
+        </Router>
+      </div>
+    </CartProvider>
   );
 }
 
