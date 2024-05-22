@@ -8,6 +8,7 @@ import styles from './ProductGrid.module.css';
 const ProductGrid = () => {
   const [products, setProducts] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
+  const [addedProduct, setAddedProduct] = useState(null);
   const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const ProductGrid = () => {
 
   const handleAddToCart = (product) => {
     addToCart(product);
+    setAddedProduct(product);
     setShowAlert(true);
     setTimeout(() => setShowAlert(false), 3000); // hide the alert after 3 seconds
   };
@@ -40,9 +42,10 @@ const ProductGrid = () => {
           </div>
         ))}
       </div>
-      {showAlert && (
+      {showAlert && addedProduct && (
         <div className={styles.alert}>
-          <p>Item added to cart!</p>
+          <img src={addedProduct.image} alt={addedProduct.title} className={styles.alertImage} />
+          <p>{addedProduct.title} added to cart!</p>
           <Link to="/cart">Go to Cart</Link>
           <button onClick={() => setShowAlert(false)}>Continue Shopping</button>
         </div>
