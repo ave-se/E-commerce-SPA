@@ -14,6 +14,7 @@ const Cart = () => {
       ) : (
         cart.map((product, index) => (
           <div key={index}>
+            <img src={product.image} alt={product.title} className={styles.cartImage} />
             <p>{product.title}: ${product.price.toFixed(2)} x {product.quantity}</p>
             <button onClick={() => increaseQuantity(product.id)}>Increase Quantity</button>
             <button onClick={() => decreaseQuantity(product.id)}>Decrease Quantity</button>
