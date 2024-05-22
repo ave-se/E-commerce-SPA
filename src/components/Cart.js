@@ -1,14 +1,22 @@
 // Cart.js
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from './CartContext';
 import styles from './Cart.module.css';
+import SavedItems from './SavedItems'; // import the SavedItems component
 
 const Cart = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, saveForLater } = useContext(CartContext);
+  const [showSaved, setShowSaved] = useState(false); // new state for showing saved items
+
+  const toggleShowSaved = () => {
+    setShowSaved((prevShowSaved) => !prevShowSaved);
+  };
 
   return (
     <div className={styles.cart}>
       <h1>Your Cart</h1>
+      <button onClick={toggleShowSaved}>{showSaved ? 'Hide Saved Items' : 'Show Saved Items'}</button>
+      {showSaved && <SavedItems />}
       {cart.length === 0 ? (
         <p>Your cart is currently empty.</p>
       ) : (
