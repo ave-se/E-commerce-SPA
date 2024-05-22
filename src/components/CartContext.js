@@ -5,6 +5,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [savedItems, setSavedItems] = useState([]); // new state for saved items
 
   const addToCart = (product) => {
     const productExists = cart.find(item => item.id === product.id);
@@ -33,8 +34,16 @@ export const CartProvider = ({ children }) => {
     ));
   };
 
+  const saveForLater = (productId) => {
+    setCart((currentCart) => {
+      const product = currentCart.find((item) => item.id === productId);
+      setSavedItems((currentSavedItems) => [...currentSavedItems, product]);
+      return currentCart.filter((item) => item.id !== productId);
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, savedItems, saveForLater }}>
       {children}
     </CartContext.Provider>
   );

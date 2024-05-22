@@ -4,7 +4,7 @@ import { CartContext } from './CartContext';
 import styles from './Cart.module.css';
 
 const Cart = () => {
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, saveForLater } = useContext(CartContext);
 
   return (
     <div className={styles.cart}>
@@ -19,6 +19,7 @@ const Cart = () => {
             <button onClick={() => increaseQuantity(product.id)}>Increase Quantity</button>
             <button onClick={() => decreaseQuantity(product.id)}>Decrease Quantity</button>
             <button onClick={() => removeFromCart(product.id)}>Remove from Cart</button>
+            <button onClick={() => saveForLater(product.id)}>Save for Later</button> {/* Save for Later button */}
           </div>
         ))
       )}
