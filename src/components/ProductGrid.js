@@ -1,10 +1,12 @@
 // ProductGrid.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import styles from './ProductGrid.module.css'; // Import your CSS module
+import { CartContext } from './CartContext';
+import styles from './ProductGrid.module.css';
 
 const ProductGrid = () => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,6 +28,7 @@ const ProductGrid = () => {
             </div>
             <h3 className={styles.productTitle}>{product.title}</h3>
             <p className={styles.price}>{product.price}</p>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
           </div>
         ))}
       </div>
