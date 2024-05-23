@@ -7,6 +7,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [savedItems, setSavedItems] = useState([]);
 
+
   const addToCart = (product) => {
     const productExists = cart.find(item => item.id === product.id);
     if (productExists) {
@@ -47,8 +48,14 @@ export const CartProvider = ({ children }) => {
     setSavedItems((currentSavedItems) => currentSavedItems.filter((item) => item.id !== productId));
   };
 
+  const addToCartFromSaved = (productId) => {
+    const product = savedItems.find((item) => item.id === productId);
+    setCart((currentCart) => [...currentCart, product]);
+    setSavedItems((currentSavedItems) => currentSavedItems.filter((item) => item.id !== productId));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, savedItems, saveForLater, removeFromSaved }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, savedItems, saveForLater, removeFromSaved, addToCartFromSaved }}>
       {children}
     </CartContext.Provider>
   );
