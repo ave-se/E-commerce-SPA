@@ -9,6 +9,7 @@ import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
 import CookieConsentModal from './components/CookieConsentModal';
 import { CartProvider } from './components/CartContext'; 
+import { SearchProvider } from './components/SearchContext'; // import the SearchProvider
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(true);
@@ -34,28 +35,32 @@ function App() {
 
   return (
     <CartProvider> {/* Wrap your application in the CartProvider */}
-      <div>
-    <Router>
-      <PromoBar />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/discounted-products" element={<DiscountedProducts />} />       </Routes>
-      {isModalOpen && (
-        <CookieConsentModal
-          onClose={handleClose}
-          onSave={handleSave}
-          onAcceptAll={handleAcceptAll}
-          onRejectAll={handleRejectAll}
-          />
-          )}
-        </Router>
-      </div>
+      <SearchProvider> {/* Also wrap your application in the SearchProvider */}
+        <div>
+          <Router>
+            <PromoBar />
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products" element={<ProductList />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/discounted-products" element={<DiscountedProducts />} />
+            </Routes>
+            {isModalOpen && (
+              <CookieConsentModal
+                onClose={handleClose}
+                onSave={handleSave}
+                onAcceptAll={handleAcceptAll}
+                onRejectAll={handleRejectAll}
+              />
+            )}
+          </Router>
+        </div>
+      </SearchProvider>
     </CartProvider>
   );
 }
+
 
 export default App;
