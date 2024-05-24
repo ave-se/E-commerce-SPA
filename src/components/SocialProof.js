@@ -1,6 +1,8 @@
 // SocialProof.js
 import React, { useState } from 'react';
 import styles from './SocialProof.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const testimonials = [
   { text: 'This is the best website for shopping ever!', author: 'John Doe' },
@@ -36,8 +38,15 @@ const SocialProof = () => {
       <h2>Testimonials</h2>
       <p className={styles.testimonial}>"{testimonials[current].text}"</p>
       <p className={styles.author}>- {testimonials[current].author}</p>
-      <button className={styles.button} onClick={prevTestimonial}>Previous</button>
-      <button className={styles.button} onClick={nextTestimonial}>Next</button>
+      <div className={styles.pagination}>
+        <button className={styles.button} onClick={prevTestimonial}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+        <span>{current + 1} / {testimonials.length}</span>
+        <button className={styles.button} onClick={nextTestimonial}>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
+      </div>
 
       <h2>Add your own testimonial</h2>
       <form className={styles.form} onSubmit={handleSubmit}>

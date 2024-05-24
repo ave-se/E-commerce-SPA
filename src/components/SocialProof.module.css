@@ -53,3 +53,10 @@
 .submitButton:hover {
     background-color: #1e7e34;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
