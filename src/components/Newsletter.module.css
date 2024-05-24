@@ -1,0 +1,27 @@
+/* Newsletter.module.css */
+.newsletterContainer {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.submitButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #1e7e34;
+}
