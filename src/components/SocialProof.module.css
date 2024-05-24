@@ -1,0 +1,55 @@
+/* SocialProof.module.css */
+.socialProofContainer {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.testimonial {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.author {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.form {
+    margin-top: 50px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.submitButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #1e7e34;
+}

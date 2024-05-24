@@ -1,5 +1,6 @@
 // SocialProof.js
 import React, { useState } from 'react';
+import styles from './SocialProof.module.css';
 
 const testimonials = [
   { text: 'This is the best website for shopping ever!', author: 'John Doe' },
@@ -31,24 +32,24 @@ const SocialProof = () => {
   };
 
   return (
-    <section>
+    <section className={styles.socialProofContainer}>
       <h2>Testimonials</h2>
-      <p>"{testimonials[current].text}"</p>
-      <p>- {testimonials[current].author}</p>
-      <button onClick={prevTestimonial}>Previous</button>
-      <button onClick={nextTestimonial}>Next</button>
+      <p className={styles.testimonial}>"{testimonials[current].text}"</p>
+      <p className={styles.author}>- {testimonials[current].author}</p>
+      <button className={styles.button} onClick={prevTestimonial}>Previous</button>
+      <button className={styles.button} onClick={nextTestimonial}>Next</button>
 
       <h2>Add your own testimonial</h2>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <label>
           Name:
-          <input type="text" name="author" value={form.author} onChange={handleChange} required />
+          <input className={styles.input} type="text" name="author" value={form.author} onChange={handleChange} required />
         </label>
         <label>
           Testimonial:
-          <textarea name="text" value={form.text} onChange={handleChange} required />
+          <textarea className={styles.input} name="text" value={form.text} onChange={handleChange} required />
         </label>
-        <button type="submit">Submit</button>
+        <button className={styles.submitButton} type="submit">Submit</button>
       </form>
     </section>
   );
