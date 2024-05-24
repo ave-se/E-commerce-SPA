@@ -1,6 +1,7 @@
 // HomePage.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Categories from './Categories';
 import SlickCarousel from './SlickCarousel';
 import FeaturedProducts from './FeaturedProducts';
 import PromotionalBanners from './PromotionalBanners';
@@ -27,6 +28,7 @@ const HomePage = () => {
     <div className={styles.home}>
       <h1>Welcome to our store</h1>
       <p className={styles.paragraph}>Feel free to browse our products.</p>
+      <Categories />
 <SlickCarousel images={images} />
       
 <FeaturedProducts className={styles.component} />
